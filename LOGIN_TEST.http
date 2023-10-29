@@ -1,0 +1,21 @@
+POST http://localhost:8080/register
+Content-Type: application/json
+
+{
+  "username": "admin2",
+  "password": "kaszanka1234"
+}
+
+### Loguj sie prosze
+POST http://localhost:8080/login
+Content-Type: application/json
+
+{
+  "username": "admin2",
+  "password": "kaszanka1234"
+}
+
+
+### test
+GET http://localhost:8080/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbjIiLCJpYXQiOjE2OTg2MDQ5NjcsImV4cCI6MTY5ODY0MDk2N30.qdTgm0fnGo_0CnxBwtRnrMcKNZ8-pMbCqm-N3AbkAk4
