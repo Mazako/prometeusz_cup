@@ -1,0 +1,25 @@
+.essa {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.myForm {
+    height: 30%;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: relative;
+}
+
+.myForm > * {
+    display: block;
+    margin: 10px;
+}
+
+.loginButon {
+    font-size: 18px;
+    margin: auto;
+}

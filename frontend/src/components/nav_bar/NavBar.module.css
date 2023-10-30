@@ -1,0 +1,51 @@
+.mainNavBar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.mainNavBar > h1 {
+    margin: 10px;
+}
+
+.elementsList > li {
+    display: inline-block;
+}
+
+.elementsList > li > a {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.elementsList > li > a:hover {
+    background-color: rgb(128, 128, 128);
+}
+
+.elementsList > li > a:active {
+    font-size: 1.01em;
+    opacity: 0.9;
+}
+
+
+.elementsList {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0;
+    padding: 20px 40px;
+    list-style-type: none;
+}
+
+.loggedIn {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    color: green;
+}
