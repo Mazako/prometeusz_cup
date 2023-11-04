@@ -11,6 +11,15 @@ export const login = async (payload) => {
 }
 
 export const getAllTeamRequest = async () => {
-    const response = await fetch('http://localhost:8080/publicApi/allTeams');
+    const response = await fetch('http://localhost:8080/publicApi/team/allTeams');
     return await response.json()
+}
+
+export const getTeamDetailsRequest = async (id) => {
+    const response = await fetch(`http://localhost:8080/publicApi/participant/byTeam?teamId=${id}`)
+    return await response.json()
+}
+
+export const getImageIcon = (id) => {
+    return `http://ddragon.leagueoflegends.com/cdn/13.21.1/img/profileicon/${id}.png`
 }

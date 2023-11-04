@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/prometeusz
+    driver-class-name: org.postgresql.Driver
+    username: admin
+    password: admin
+  liquibase:
+    change-log: classpath:db/changelog/master.xml
+
+lol-api:
+  key: RGAPI-0efa5edb-3579-4c2d-aedc-337d1e51d4bc
+
+startup:
+  run-user-fetch: true

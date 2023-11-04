@@ -19,3 +19,11 @@ Content-Type: application/json
 ### test
 GET http://localhost:8080/test
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbjIiLCJpYXQiOjE2OTg2MDQ5NjcsImV4cCI6MTY5ODY0MDk2N30.qdTgm0fnGo_0CnxBwtRnrMcKNZ8-pMbCqm-N3AbkAk4
+
+
+### GetAllTeamsTest
+GET http://localhost:8080/publicApi/team/allTeams
+
+
+### Get participants by ID
+GET http://localhost:8080/publicApi/participant/byTeam?teamId=3

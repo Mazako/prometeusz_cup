@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="0" author="mazak">
+        <!--CREATE TEAM TABLE-->
+        <createTable tableName="team">
+            <column name="team_id" type="bigint" autoIncrement="true">
+                <constraints unique="true" nullable="false " primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar2(50)">
+                <constraints unique="true"/>
+            </column>
+        </createTable>
+        <!--CREATE TEAM ENTRIES-->
+        <insert tableName="team">
+            <column name="team_id" value="1"/>
+            <column name="name" value="Spermax"/>
+        </insert>
+        <insert tableName="team">
+            <column name="team_id" value="2"/>
+            <column name="name" value="Jokerski Styl"/>
+        </insert>
+        <insert tableName="team">
+            <column name="team_id" value="3"/>
+            <column name="name" value="DMS Squad"/>
+        </insert>
+        <insert tableName="team">
+            <column name="team_id" value="4"/>
+            <column name="name" value="ECPU"/>
+        </insert>
+        <insert tableName="team">
+            <column name="team_id" value="5"/>
+            <column name="name" value="Ubermenschen"/>
+        </insert>
+        <insert tableName="team">
+            <column name="team_id" value="6"/>
+            <column name="name" value="RKS Huwdu"/>
+        </insert>
+        <insert tableName="team">
+            <column name="team_id" value="7"/>
+            <column name="name" value="Czarnoksiężnicy"/>
+        </insert>
+        <insert tableName="team">
+            <column name="team_id" value="8"/>
+            <column name="name" value="Stawnik Rangers"/>
+        </insert>
+
+        <!--        CREATE PARTICIPANT TABLE-->
+        <createTable tableName="participant">
+            <column name="summoner_id" type="varchar2(120)">
+                <constraints unique="true" primaryKey="true" nullable="false"/>
+            </column>
+            <column name="PUUID" type="varchar2(120)">
+                <constraints unique="true" nullable="false"/>
+            </column>
+            <column name="summoner_name" type="varchar2(60)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="captain" type="boolean" defaultValue="false"/>
+            <column name="soloq_tier" type="varchar2(10)"/>
+            <column name="soloq_rank" type="varchar2(3)"/>
+            <column name="flex_tier" type="varchar2(10)"/>
+            <column name="flex_rank" type="varchar2(3)"/>
+            <column name="avatar_id" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="team_id" type="bigint">
+                <constraints foreignKeyName="team_id" references="team(team_id)"/>
+            </column>
+            <column name="game_role" type="varchar2(7)" />
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>

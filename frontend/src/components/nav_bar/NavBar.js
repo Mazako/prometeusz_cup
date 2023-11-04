@@ -11,7 +11,7 @@ export function NavBar() {
             {loggedIn && <p className={styles.loggedIn}>ZALOGOWANO</p>}
             <ul className={styles.elementsList}>
                 <li><NavLink to='/'>Drabinka</NavLink></li>
-                <li><NavLink to='/'>Lista zespolow</NavLink></li>
+                <li><NavLink to='/allTeams'>Lista zespolow</NavLink></li>
                 <li><NavLink to='/'>Zawodnicy</NavLink></li>
             </ul>
         </div>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet id="1" author="admin">
+        <createTable tableName="match">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true" />
+            </column>
+            <column name="tournament_match_number" type="int">
+                <constraints nullable="false" />
+            </column>
+            <column name="team_a_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="team_a_id" references="team(team_id)"/>
+            </column>
+            <column name="team_a_score" type="int" />
+            <column name="team_b_id" type="bigint">
+                <constraints nullable="false" foreignKeyName="team_b_id" references="team(team_id)"/>
+            </column>
+            <column name="team_b_score" type="int" />
+        </createTable>
+
+        <insert tableName="match">
+            <column name="tournament_match_number">1</column>
+            <column name="team_a_id">3</column>
+            <column name="team_b_id">4</column>
+        </insert>
+
+        <insert tableName="match">
+            <column name="tournament_match_number">2</column>
+            <column name="team_a_id">5</column>
+            <column name="team_b_id">8</column>
+        </insert>
+
+        <insert tableName="match">
+            <column name="tournament_match_number">3</column>
+            <column name="team_a_id">6</column>
+            <column name="team_b_id">2</column>
+        </insert>
+
+        <insert tableName="match">
+            <column name="tournament_match_number">4</column>
+            <column name="team_a_id">1</column>
+            <column name="team_b_id">7</column>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

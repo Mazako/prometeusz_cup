@@ -5,9 +5,6 @@ export function MainPage() {
     return (
         <div>
             <NavBar />
-            <div>
-                Hello
-            </div>
             <Outlet />
         </div>
     )

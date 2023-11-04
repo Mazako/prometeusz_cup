@@ -1,0 +1,37 @@
+.teamsList {
+    width: 100%;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    padding: 0 10%;
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+
+.teamListItem {
+    border: 1px solid black;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+}
+
+.teamListItem > h2 {
+    margin: 0;
+    grid-row: 1 / span 3;
+    align-self: center;
+}
+
+.teamListItem > * {
+    margin: 0;
+}
+
+.captain {
+    align-self: end;
+}
