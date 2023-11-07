@@ -7,6 +7,7 @@ import pl.mazak.backend.persistance.Role;
 import pl.mazak.backend.persistance.TeamRepository;
 import pl.mazak.backend.team.TeamService.TeamDTO;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -25,6 +26,7 @@ public class ParticipantService {
         List<ParticipantDTO> list = participantRepository.getParticipantsByTeam(teamId)
                 .stream()
                 .map(ParticipantDTO::fromParticipant)
+                .sorted(Comparator.comparing(participantDTO -> participantDTO.role.getOrdinal()))
                 .toList();
 
         Optional<TeamDTO> team = teamRepository.findById(teamId).map(TeamDTO::fromTeam);
@@ -36,6 +38,7 @@ public class ParticipantService {
 
     }
     public record ParticipantDTO(String name,
+                                 int iconId,
                                  Boolean captain,
                                  String soloqTier,
                                  String soloqRank,
@@ -44,6 +47,7 @@ public class ParticipantService {
                                  Role role){
         static ParticipantDTO fromParticipant(Participant participant) {
             return new ParticipantDTO(participant.getSummonerName(),
+                    participant.getAvatarId(),
                     participant.getCaptain(),
                     participant.getSoloqTier(),
                     participant.getSoloqRank(),

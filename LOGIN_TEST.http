@@ -26,4 +26,4 @@ GET http://localhost:8080/publicApi/team/allTeams
 
 
 ### Get participants by ID
-GET http://localhost:8080/publicApi/participant/byTeam?teamId=3
+GET http://localhost:8080/publicApi/participant/byTeam?teamId=2

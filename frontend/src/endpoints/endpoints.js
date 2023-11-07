@@ -23,3 +23,14 @@ export const getTeamDetailsRequest = async (id) => {
 export const getImageIcon = (id) => {
     return `http://ddragon.leagueoflegends.com/cdn/13.21.1/img/profileicon/${id}.png`
 }
+
+export const getTierIcon = (tier) => {
+    if (!tier) {
+        return '/images/tiers/unranked.png'
+    }
+    return `/images/tiers/${tier.toLowerCase()}.png`
+}
+
+export const getLaneIcon = (role) => {
+    return `/images/role/${role.toLowerCase()}.png`
+}

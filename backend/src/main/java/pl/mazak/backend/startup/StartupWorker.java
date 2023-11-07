@@ -11,7 +11,6 @@ import pl.mazak.backend.lolapi.SummonerDTO;
 import pl.mazak.backend.persistance.Participant;
 import pl.mazak.backend.persistance.ParticipantRepository;
 import pl.mazak.backend.persistance.Team;
-import pl.mazak.backend.persistance.TeamRepository;
 
 import java.io.IOException;
 import java.io.UncheckedIOException;
